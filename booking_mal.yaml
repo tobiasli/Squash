@@ -1,0 +1,20 @@
+bruker:
+    url: http://sagenesquash.bestille.no
+    brukernavn: tobiaslland@gmail.com
+    passord: 9215
+    spille:
+        -   tid: 13.02.2015 17:00
+            lengde: 60 #minutter
+            partnere: Donald Duck, Fetter Anton
+
+        -   tid: 20.03.2015 21:00
+            lengde: 120 #minutter
+            partnere: Dolly Duck
+
+        -   tid: 22.03.2015 12:30
+            lengde: 120 #minutter
+            partnere: Dolly Duck
+
+        #Du kan føre opp så mange tilsvarende spilletider du vil.
+        #Dataene i denne listen kan endres når som helst frem til booking
+        #midtnatt dagen før.
