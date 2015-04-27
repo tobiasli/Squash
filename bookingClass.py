@@ -17,7 +17,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-import dateParse #Homemade module for intelligent parcing of dates.
+import dateParse as dp #Homemade module for intelligent parcing of dates.
+dateParse = dateParse.dateParse()
 
 # Various constants:
 defaultCourtRental = datetime.timedelta(minutes=30) #minutes
@@ -189,8 +190,10 @@ class main(object):
                                         bookedTime = copy.deepcopy(t.text)
                                         t.click()
 
-                                        self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note1'))).send_keys(self.session.comment)
-                                        self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note2'))).send_keys(self.session.partners)
+                                        if self.session.comment:
+                                            self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note1'))).send_keys(self.session.comment)
+                                        if self.session.partners:
+                                            self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note2'))).send_keys(self.session.partners)
                                         self.session.main.wait.until(EC.presence_of_element_located((By.ID,'btnNext'))).click()
 
                                         #Verify that page reached is actually receipt for booking. If not continue to next court.
