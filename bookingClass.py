@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-import dateParse as dp #Homemade module for intelligent parcing of dates.
+import dateParse #Homemade module for intelligent parcing of dates.
 dateParse = dateParse.dateParse()
 
 # Various constants:
