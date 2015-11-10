@@ -1,6 +1,8 @@
 # Squash
-Suite of scripts for booking squash sessions automatically.
-<br/>
+<b>Suite of scripts for booking squash sessions automatically.</b>
+<br/><br/>
+Define all the sessions you want to play in a config, and see Firefox book the sessions automatically.
+<br/><br/>
 When setup as a Scheduled Task, the script will fetch login details and session information from the yaml-config and if the squash sessions are within the booking limit (the day before the session), the program will attempt to book each session.
 <br/><br/>
 The program has a hardcoded court preference of 1, 6, 2, 5, 4 and 3.
