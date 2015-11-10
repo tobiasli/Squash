@@ -35,11 +35,13 @@ for user in bookStore:
                 b.login()
 
             for booking in session.bookings:
-                pass
-##                ok = booking.book()
+                ok = booking.book()
 
     if debugging:
         b.cancelAllBookings()
+
+    if b.browser:
+        b.browser.quit()
 
 
 
