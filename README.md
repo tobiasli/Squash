@@ -2,9 +2,9 @@
 Suite of scripts for booking squash sessions automatically.
 <br/>
 The user specifies their login-specifics along with a series of sessions the user wants to play squash. The program parses the config, and if the squash sessions are within the booking limit (the day before the session), the program will attempt to book the session.
-<br/>
-The program has a hardcoded court preference of 1, 6, 2, 5, 4 and 3.
 <br/><br/>
+The program has a hardcoded court preference of 1, 6, 2, 5, 4 and 3.
+
 ## Prerequisites
 <b>Programs:</b>
 <ul>
@@ -23,6 +23,8 @@ Install Selenium via Anaconda Command Prompt:
 <nl>
 <li>Add all files to the same folder.</li>
 <li>Use Windows Task Scheduler (Oppgaveplanlegging) to setup a scheduled task of
-<p>conda install selenium</p>
+'''
+conda install selenium</p>
+'''
 </li>
 </nl>
