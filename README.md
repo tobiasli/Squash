@@ -16,15 +16,14 @@ The program has a hardcoded court preference of 1, 6, 2, 5, 4 and 3.
 <li>Selenium</li>
 </ul>
 Install Selenium via Anaconda Command Prompt:
-    <p>conda install selenium</p>
-<br/>
-<br/>
+```
+>> conda install selenium
+```
 ## Installation
 <nl>
 <li>Add all files to the same folder.</li>
-<li>Use Windows Task Scheduler (Oppgaveplanlegging) to setup a scheduled task of
-'''
-conda install selenium</p>
-'''
-</li>
+<li>Use Windows Task Scheduler (Oppgaveplanlegging) to setup a scheduled task at 00:00 for:</li>
+```
+>> C:\Anaconda\python.exe C:\somepath\bookingMain.py
+```
 </nl>
