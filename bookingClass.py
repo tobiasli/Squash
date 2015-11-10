@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-import dateParse #Homemade module for intelligent parcing of dates.
+from Tools import dateParse #Homemade module for intelligent parcing of dates.
 
 # Various constants:
 defaultCourtRental = datetime.timedelta(minutes=30) #minutes
