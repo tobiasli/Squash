@@ -18,7 +18,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
 import dateParse #Homemade module for intelligent parcing of dates.
-dateParse = dateParse.dateParse()
 
 # Various constants:
 defaultCourtRental = datetime.timedelta(minutes=30) #minutes
@@ -180,7 +179,7 @@ class main(object):
                                     courtFound = True
 
                             if not courtFound:
-                                print 'Booking for %s %02d:%02d - %02d:%02d not found' % (self.session.day,self.first.hour,self.first.minute,self.last.hour,self.last.minute)
+                                print('Booking for %s %02d:%02d - %02d:%02d not found' % (self.session.day,self.first.hour,self.first.minute,self.last.hour,self.last.minute))
                                 return False
 
                             #Check candidates and book most preferable court:
@@ -204,8 +203,8 @@ class main(object):
                                             return True
                                         else:
                                             if tryCount < maximumBookingAttemptsBeforeFail:
-                                                print 'Try %d for %s Errored out. Retry booking (max %d tries).' % (tryCount,bookedTime,maxTries)
+                                                print('Try %d for %s Errored out. Retry booking (max %d tries).' % (tryCount,bookedTime,maxTries))
                                             else:
-                                                print 'Booking for %s errored for the last time. Aborted.' % bookedTime
+                                                print('Booking for %s errored for the last time. Aborted.' % bookedTime)
                     tryCount += 1
                 return False

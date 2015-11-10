@@ -2,44 +2,37 @@
 -   url: http://sagenesquash.bestille.no
     login:
         username: tobiaslland@gmail.com
-        password: ****
+        password: 1234
     sessions:
-        -   time: onsdag 9:00
-            length: 60 #minutter
-            partners: Erlend Andresen
+        -   time: 20.03.2015 21:00
+            length: 120 # minutes
+            partners: Dolly Duck
             comment:
 
-##        -   time: 20.03.2015 21:00
-##            length: 120 #minutter
-##            partners: Dolly Duck
-##            comment:
-##
-##        -   time: 22.03.2015 12:30
-##            length: 120 #minutter
-##            partners: Dolly Duck
-##            comment:
+        -   time: onsdag 9:00    # Vil alltid booke førstkommende onsdag kl 09:00.
+            length: 60 # minutes
+            partners: Onkel Skrue
+            comment:
+
+        -   time: 22.03.2015 12:30
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
 
         # - Du kan ha så mange spilletider du vil nedover.
 
         # - Lengden kan være hva som helst så lenge det går opp med en halvtime.
 
-        # - Scriptet avbestiller ikke. Dersom den ikke får booket alt kan man
-        #   selv følge med på om det blir ledig i løpet av dagen
+# You can add more users, which will also be booked when file is checked:
+-   url: http://sagenesquash.bestille.no
+    login:
+        brukernavn: nissefjes@epost.no
+        passord: 1234
+    sessions:
+        -   time: 13.02.2015 17:00
+            length: 60
+            partners: Russel Crowe, Brad Pitt
 
-
-##-   url: http://sagenesquash.bestille.no
-##    login:
-##        brukernavn: fincubus@gmail.com
-##        passord: 1234
-##    sessions:
-##        -   time: 13.02.2015 17:00
-##            length: 60 #minutter
-##            partners: Russel Crowe, Brad Pitt
-##
-##        -   time: 20.03.2015 21:00
-##            length: 120 #minutter
-##            partners: Mads Mikkelsen
-
-        #Du kan føre opp så mange tilsvarende spilletimeer du vil.
-        #Dataene i denne listen kan endres når som helst frem til booking
-        #midtnatt dagen før.
+        -   time: 20.03.2015 21:00
+            length: 120
+            partners: Mads Mikkelsen

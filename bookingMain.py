@@ -14,12 +14,13 @@ from __future__ import unicode_literals
 import os
 import yaml
 import bookingClass
+import codecs
 
 debugging = False
 
 path =  os.path.dirname(__file__)
 
-with open(os.path.join(path,'booking.yaml'),'r') as config:
+with codecs.open(os.path.join(path,'booking.yaml'),'r', encoding = 'utf-8') as config:
     bookStore = yaml.load(config)
 
 for user in bookStore:
@@ -34,7 +35,8 @@ for user in bookStore:
                 b.login()
 
             for booking in session.bookings:
-                ok = booking.book()
+                pass
+##                ok = booking.book()
 
     if debugging:
         b.cancelAllBookings()
