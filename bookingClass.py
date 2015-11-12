@@ -17,7 +17,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-from Tools import dateParse #Homemade module for intelligent parcing of dates.
+import dateparse
 
 # Various constants:
 defaultCourtRental = datetime.timedelta(minutes=30) #minutes
@@ -103,7 +103,7 @@ class main(object):
 
         def __init__(self,parent,time,length,partners,comment):
             self.main = parent
-            self.time = dateParse.parse(time)
+            self.time = dateparse.parse(time)
             self.length = datetime.timedelta(minutes=length)
 
             if isinstance(partners,list):
