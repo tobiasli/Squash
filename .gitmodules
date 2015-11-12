@@ -1,3 +1,6 @@
 [submodule "Tools"]
 	path = Tools
 	url = https://github.com/tobiasli/Tools
+[submodule "dateparse"]
+	path = dateparse
+	url = https://github.com/tobiasli/dateparse.git
