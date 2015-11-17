@@ -22,11 +22,14 @@ Install Selenium via Anaconda Command Prompt:
 >> conda install selenium
 ```
 ## Installation
-
---*Add all files to the same folder.
---*Use Windows Task Scheduler (Oppgaveplanlegging) to setup a scheduled task at 00:00 for:
+<ol>
+<li>Add all files to the same folder.</li>
+<li>Use Windows Task Scheduler (Oppgaveplanlegging) to setup a scheduled task at 00:00 for:</li>
+</ol>
 ```
 >> C:\Anaconda\python.exe C:\somepath\bookingMain.py
 ```
---*To book a session, modify booking.yaml, and the program will attempt to book the sessions.
---*Date parsing is very flexible. "monday 17:00" will continuously attempt to book next monday at 17:00 oclock.
+<ol start="3">
+<li>To book a session, modify booking.yaml, and the program will attempt to book the sessions.</li>
+<li>Date parsing is very flexible. "monday 17:00" will continuously attempt to book next monday at 17:00 oclock.</li>
+</ol>
