@@ -6,7 +6,7 @@ before_install:
 install:
   - pip install coveralls  # Add me to install python-coveralls
   - pip install selenium
-  - pip install yaml
+  - pip install pyyaml
 script:
     - py.test
     - coverage run bookingClass.py
