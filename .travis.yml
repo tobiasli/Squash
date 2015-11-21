@@ -7,6 +7,9 @@ install:
   - pip install coveralls  # Add me to install python-coveralls
   - pip install selenium
   - pip install pyyaml
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 script:
     - py.test
     - coverage run bookingClass.py
