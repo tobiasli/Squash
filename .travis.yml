@@ -5,6 +5,7 @@ before_install:
     - pip install pytest pytest-cov
 install:
   - pip install coveralls  # Add me to install python-coveralls
+  - pip install selenium
 script:
     - py.test
     - coverage run bookingClass.py
