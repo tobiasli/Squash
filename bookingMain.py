@@ -42,9 +42,3 @@ for user in bookStore:
 
     if b.browser:
         b.browser.quit()
-
-
-
-
-
-
