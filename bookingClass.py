@@ -19,6 +19,8 @@ from selenium.webdriver.common.by import By
 
 import dateparse
 
+test_mode = False
+
 # Various constants:
 defaultCourtRental = datetime.timedelta(minutes=30) #minutes
 courtPriority = [1,6,2,5,4,3]
@@ -103,7 +105,8 @@ class main(object):
 
         def __init__(self,parent,time,length,partners,comment):
             self.main = parent
-            self.time = dateparse.parse(time)
+            self.time_raw = time
+            self.time = dateparse.parse(self.time_raw)
             self.length = datetime.timedelta(minutes=length)
 
             if isinstance(partners,list):
@@ -187,24 +190,36 @@ class main(object):
                                 for t in candidates:
                                     if t.text == courtTime:
                                         bookedTime = copy.deepcopy(t.text)
-                                        t.click()
+                                        if not test_mode:
+                                            t.click()
 
-                                        if self.session.comment:
-                                            self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note1'))).send_keys(self.session.comment)
-                                        if self.session.partners:
-                                            self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note2'))).send_keys(self.session.partners)
-                                        self.session.main.wait.until(EC.presence_of_element_located((By.ID,'btnNext'))).click()
+                                            if self.session.comment:
+                                                self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note1'))).send_keys(self.session.comment)
+                                            if self.session.partners:
+                                                self.session.main.wait.until(EC.presence_of_element_located((By.ID,'Note2'))).send_keys(self.session.partners)
 
-                                        #Verify that page reached is actually receipt for booking. If not continue to next court.
-                                        #
-                                        if self.session.main.wait.until(EC.presence_of_element_located((By.ID,'mainContent_ShowActivityInfo1_lblHeader'))).text == 'Timen er bekreftet!':
-                                            print('Booked %s' % bookedTime)
-                                            self.session.courtPriority = [court]+self.session.courtPriority
-                                            return True
-                                        else:
-                                            if tryCount < maximumBookingAttemptsBeforeFail:
-                                                print('Try %d for %s Errored out. Retry booking (max %d tries).' % (tryCount,bookedTime,maxTries))
+
+                                            self.session.main.wait.until(EC.presence_of_element_located((By.ID,'btnNext'))).click()
+
+                                            #Verify that page reached is actually receipt for booking. If not continue to next court.
+                                            #
+                                            if self.session.main.wait.until(EC.presence_of_element_located((By.ID,'mainContent_ShowActivityInfo1_lblHeader'))).text == 'Timen er bekreftet!':
+                                                print('Booked %s' % bookedTime)
+                                                self.session.courtPriority = [court]+self.session.courtPriority
+                                                return True
                                             else:
-                                                print('Booking for %s errored for the last time. Aborted.' % bookedTime)
+                                                if tryCount < maximumBookingAttemptsBeforeFail:
+                                                    print('Try %d for %s Errored out. Retry booking (max %d tries).' % (tryCount,bookedTime,maxTries))
+                                                else:
+                                                    print('Booking for %s errored for the last time. Aborted.' % bookedTime)
+                                        else:
+                                            self.session.courtPriority = [court]+self.session.courtPriority
+                                            print('TEST_MODE: Not booked: %s for session %s' % (bookedTime,self.session.time_raw))
+                                            return True
+
                     tryCount += 1
                 return False
+
+if __name__ == '__main__':
+    from tests import test_booking
+    test_booking.run()

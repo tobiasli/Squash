@@ -9,12 +9,37 @@
             partners: Dolly Duck
             comment:
 
-        -   time: onsdag 9:00    # Vil alltid booke førstkommende onsdag kl 09:00.
-            length: 60 # minutes
+        -   time: mandag 9:00    # Vil alltid booke førstkommende onsdag kl 09:00.
+            length: 120 # minutes
             partners: Onkel Skrue
             comment:
 
-        -   time: 22.03.2015 12:30
+        -   time: tirsdag 09:00
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
+
+        -   time: onsdag 09:00
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
+
+        -   time: torsdag 09:00
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
+
+        -   time: fredag 09:00
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
+
+        -   time: lørdag 09:00
+            length: 120 # minutes
+            partners: Fetter Anton
+            comment:
+
+        -   time: søndag 09:00
             length: 120 # minutes
             partners: Fetter Anton
             comment:
