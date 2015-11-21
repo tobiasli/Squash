@@ -1,4 +1,9 @@
 # Squash
+
+[![Stories in Ready](https://badge.waffle.io/tobiasli/Squash.svg?label=ready&title=backlog)](http://waffle.io/tobiasli/Squash)<br/>
+[![Build Status](https://travis-ci.org/tobiasli/Squash.svg?branch=master)](https://travis-ci.org/tobiasli/Squash)<br/>
+[![Coverage Status](https://coveralls.io/repos/tobiasli/Squash/badge.svg?branch=master&service=github)](https://coveralls.io/github/tobiasli/Squash?branch=master)
+
 <b>Suite of scripts for booking squash sessions automatically.</b>
 <br/><br/>
 Define all the sessions you want to play in a config, and see Firefox book the sessions automatically.
