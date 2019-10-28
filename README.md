@@ -4,7 +4,7 @@
 
 **Suite of scripts for booking squash sessions automatically.**
 
-(Note: This booking-robot worked for the webpages of Sagene Squash in 2015.)
+*Note: This booking-robot worked for the webpages of Sagene Squash in 2015.*
 
 Define all the sessions you want to play in a config, and see Firefox book the sessions automatically.
 
